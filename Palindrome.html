@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Palidrome</title>
+  </head>
+  <body>
+    <h2>Javascript Palindrome Checking App</h2>
+
+    <script>
+      function palindrome(Mystring) {
+        var input = Mystring.replace(/[^A-Z0-9]/gi, "").toLowerCase();
+        var reverse = input.split("").reverse().join("");
+
+        document.write(`Original String : ${Mystring}<br>`);
+        document.write(`Reversed String : ${reverse}<br><br>`);
+
+        if (input == reverse) {
+          document.write(`<div>${Mystring} is a Palindrome.</div>`);
+        } else {
+          document.write(`<div>${Mystring} is not a Palindrome.</div>`);
+        }
+      }
+
+      palindrome("mom");
+
+      palindrome("$aba");
+    </script>
+  </body>
+</html>
