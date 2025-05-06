@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Tahoma;
+      }
+
+      body {
+        background: #c6d1d3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+        color: #c6d1d3;
+      }
+
+      div {
+        background-color: #0b0500;
+        padding: 20px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 10px 30px black;
+      }
+
+      button {
+        border-radius: 5px;
+        font-size: 20px;
+        padding: 10px;
+        background-color: #c6d1d3;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      button:hover {
+        background-color: #485964;
+        cursor: pointer;
+      }
+
+      h1 {
+        font-size: 30px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Random Background Color Changer</h1>
+      <button onclick="changeBGColor()">CHANGE COLOR</button>
+    </div>
+
+    <script>
+      function colorChange() {
+        const color = "0123456789ABCDEF";
+        let x = "#";
+
+        for (let i = 0; i < 6; i++) {
+          x += color[Math.floor(Math.random() * 16)];
+        }
+
+        return x;
+      }
+
+      function changeBGColor() {
+        document.body.style.backgroundColor = colorChange();
+      }
+    </script>
+  </body>
+</html>
